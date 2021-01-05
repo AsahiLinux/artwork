@@ -6,7 +6,7 @@ You may use the logos to reference the Asahi Linux project. Please do not use th
 
 The Asahi Linux logo art is copyright (c) 2021 soundflora* and Hector Martin.
 
-The logo art is licensed under CC-BY-SA 4.0. Please see the LICENSE file for the license text.
+The logo art is licensed under CC BY-SA 4.0. Please see the LICENSE file for the license text.
 
 * Logo design by [soundflora*](https://soundflora.tokyo)
 * Editing by [Hector Martin "marcan"](https://github.com/marcan/)
