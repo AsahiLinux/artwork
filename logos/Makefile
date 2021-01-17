@@ -6,7 +6,8 @@ TARGETS=$(patsubst src/%.svg,svg/%.svg,$(SOURCES)) \
 	$(patsubst src/%.svg,png_128/%.png,$(SOURCES)) \
 	$(patsubst src/%.svg,png_64/%.png,$(SOURCES)) \
 	$(patsubst src/%.svg,png_32/%.png,$(SOURCES)) \
-	$(patsubst src/%.svg,png_16/%.png,$(SOURCES))
+	$(patsubst src/%.svg,png_16/%.png,$(SOURCES)) \
+	boot_logo.ppm
 
 all: $(TARGETS)
 
@@ -33,3 +34,10 @@ png_32/%.png : src/%.svg
 
 png_16/%.png : src/%.svg
 	inkscape $< --export-width 16 -o $@
+
+boot_logo.ppm: src/AsahiLinux_logomark.svg
+	inkscape src/AsahiLinux_logomark.svg --export-area=24:24:550:550 \
+		--export-width 80 --export-type=png \
+		--export-background=black -o - | \
+		pngtopnm | ppmquant 224 | pnmtoplainpnm > $@
+
