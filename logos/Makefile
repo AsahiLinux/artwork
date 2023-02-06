@@ -43,7 +43,7 @@ png_32/%.png : src/%.svg
 	inkscape $< --export-width 32 --export-png=$@
 
 png_16/%.png : src/%.svg
-	inkscape $< --export-width 16 --export-png $@
+	inkscape $< --export-width 16 --export-png=$@
 
 icns/%.icns: png_16/%.png png_32/%.png png_48/%.png png_128/%.png png_256/%.png png_512/%.png
 	png2icns $@ png_{16,32,48,128,256,512}/$(patsubst icns/%.icns,%.png,$@)
